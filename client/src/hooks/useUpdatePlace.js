@@ -9,7 +9,7 @@ const useUpdatePlace = () => {
     const updatePlace = async ({ data, id, setIsModalOpen }) => {
         setIsLoading(true);
         await axios
-            .post(`https://explore-buddy-backend.herokuapp.com/home/update`, {
+            .post(`${process.env.REACT_APP_SERVER_URL}/home/update`, {
                 ...data,
                 id,
             })

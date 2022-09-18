@@ -17,7 +17,7 @@ const useSignIn = () => {
         formData.append("password",credentials.password);
         await axios
             .post(
-                `https://explore-buddy-backend.herokuapp.com/api/login`,
+                `${process.env.REACT_APP_SERVER_URL}/api/login`,
                 formData
             )
             .then((res) => {

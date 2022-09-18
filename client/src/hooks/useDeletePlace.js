@@ -8,7 +8,7 @@ const useDeletePlace = () => {
     const deletePlace = async ({ id, setIsModalOpen }) => {
         setIsLoading(true);
         await axios
-            .post(`https://explore-buddy-backend.herokuapp.com/home/delete/${id}`)
+            .post(`${process.env.REACT_APP_SERVER_URL}/home/delete/${id}`)
             .then((res) => {
                 deleteUIMarker({ id });
                 setSelectedPlace(null);

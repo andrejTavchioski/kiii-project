@@ -12,7 +12,7 @@ const useGetPlaceDesc = ({ selectedPlace, setSelectedPlace }) => {
         setIsLoading(true);
         await axios
             .get(
-                `https://explore-buddy-backend.herokuapp.com/home/getLocation?id=${id}`
+                `${process.env.REACT_APP_SERVER_URL}/home/getLocation?id=${id}`
             )
             .then(({ data }) => {
                 setSelectedPlace(data);

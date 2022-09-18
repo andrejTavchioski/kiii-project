@@ -22,7 +22,7 @@ const useGetMarkersData = () => {
         }
         await axios
             .get(
-                `https://explore-buddy-backend.herokuapp.com/home/markers${queryString}`
+                `${process.env.REACT_APP_SERVER_URL}/home/markers${queryString}`
             )
             .then(({ data }) => {
                 setMarkersData(data);

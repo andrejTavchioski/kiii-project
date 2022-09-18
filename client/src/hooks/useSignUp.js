@@ -10,7 +10,7 @@ const useSignUp = () => {
         setIsLoading(true);
         await axios
             .post(
-                `https://explore-buddy-backend.herokuapp.com/user/registration`,
+                `${process.env.REACT_APP_SERVER_URL}/user/registration`,
                 { ...credentials, role: 0 }
             )
             .then((res) => {

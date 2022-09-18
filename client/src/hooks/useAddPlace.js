@@ -8,7 +8,7 @@ const useAddPlace = () => {
     const addPlace = async ({ data, setIsOpenPlaceModal }) => {
         setIsLoading(true);
         await axios
-            .post(`https://explore-buddy-backend.herokuapp.com/home/add`, data)
+            .post(`${process.env.REACT_APP_SERVER_URL}/home/add`, data)
             .then((res) => {
                 addUIMarker({ data: res.data });
                 setSelectedPlace(res.data);
