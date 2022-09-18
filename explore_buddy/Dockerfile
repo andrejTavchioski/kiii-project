@@ -1,6 +1,6 @@
 FROM maven:3.5-jdk-8 AS build  
-COPY src 
-COPY pom.xml
+COPY src .
+COPY pom.xml .
 RUN mvn -f pom.xml clean package
 
 # FROM openjdk:11
